@@ -140,7 +140,14 @@ namespace SolrIKVM {
         }
 
         public long getDateHeader(string str) {
-            throw new NotImplementedException();
+            var h = context.Request.Headers[str];
+            if (h == null)
+                return -1;
+            try {
+                return DateTime.Parse(h).Ticks;                
+            } catch (System.Exception e) {
+                throw new java.lang.IllegalArgumentException("Can't get date header " + str, e);
+            }
         }
 
         public string getHeader(string str) {
@@ -148,7 +155,8 @@ namespace SolrIKVM {
         }
 
         public Enumeration getHeaders(string str) {
-            throw new NotImplementedException();
+            var headers = context.Request.Headers.GetValues(str) ?? new string[0];
+            return new EnumerationAdapter(headers.GetEnumerator());
         }
 
         public Enumeration getHeaderNames() {
@@ -172,7 +180,7 @@ namespace SolrIKVM {
         }
 
         public string getContextPath() {
-            throw new NotImplementedException();
+            return "";
         }
 
         public string getQueryString() {

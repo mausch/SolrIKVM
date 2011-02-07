@@ -115,7 +115,8 @@ namespace SolrIKVM {
         }
 
         public void setDateHeader(string str, long l) {
-            throw new NotImplementedException();
+            var dt = new DateTime(l);
+            context.Response.AddHeader(str, dt.ToString("R"));
         }
 
         public void addDateHeader(string str, long l) {
@@ -123,7 +124,7 @@ namespace SolrIKVM {
         }
 
         public void setHeader(string str1, string str2) {
-            throw new NotImplementedException();
+            context.Response.AddHeader(str1, str2);
         }
 
         public void addHeader(string str1, string str2) {

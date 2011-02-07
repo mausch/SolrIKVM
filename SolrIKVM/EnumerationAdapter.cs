@@ -5,17 +5,21 @@ using java.util;
 namespace SolrIKVM {
     public class EnumerationAdapter : Enumeration {
         private readonly IEnumerator e;
+        private bool next;
 
         public EnumerationAdapter(IEnumerator e) {
             this.e = e;
+            next = e.MoveNext();
         }
 
         public bool hasMoreElements() {
-            return e.MoveNext(); // wrong
+            return next;
         }
 
         public object nextElement() {
-            return e.Current; // wrong
+            var o = e.Current;
+            next = e.MoveNext();
+            return o;
         }
     }
 }
