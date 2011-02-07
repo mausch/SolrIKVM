@@ -9,7 +9,7 @@ namespace SolrAspNet {
         protected void Application_Start(object sender, EventArgs e) {
             var root = Server.MapPath("/");
             var solrHome = Path.Combine(root, ConfigurationManager.AppSettings["solr.home"]);
-            SolrHandler.SetHome(solrHome);
+            Setup.SetHome(solrHome);
         }
 
         protected void Session_Start(object sender, EventArgs e) {}

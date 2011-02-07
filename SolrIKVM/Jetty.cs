@@ -16,8 +16,7 @@ namespace SolrIKVM {
 
         public static int Main(string[] args) {
             var home = ConfigurationManager.AppSettings["solr.home"];
-            java.lang.System.setProperty("solr.solr.home", home);
-            java.lang.System.setProperty("solr.data.dir", Path.Combine(home, "data"));
+            Setup.SetHome(home);
             var jetty = new JettySolrRunner("/solr", Port);
             jetty.start();
             return 0;

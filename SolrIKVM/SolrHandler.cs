@@ -1,15 +1,10 @@
 ﻿using System;
-using System.IO;
 using System.Web;
 using javax.servlet.http;
 using org.apache.solr.servlet;
 
 namespace SolrIKVM {
     public class SolrHandler : IHttpHandler, IDisposable {
-        public static void SetHome(string path) {
-            java.lang.System.setProperty("solr.solr.home", path);
-            java.lang.System.setProperty("solr.data.dir", Path.Combine(path, "data"));
-        }
 
         private readonly HttpServlet servlet;
 
