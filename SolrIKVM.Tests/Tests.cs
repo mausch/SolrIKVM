@@ -4,7 +4,6 @@ using ikvm.runtime;
 using java.lang;
 using java.util;
 using NUnit.Framework;
-using java.util.logging;
 using org.apache.solr.client.solrj;
 using org.apache.solr.client.solrj.beans;
 using org.apache.solr.client.solrj.embedded;
@@ -25,15 +24,6 @@ namespace SolrIKVM {
             SolrServer solr = new CommonsHttpSolrServer("http://localhost:8983/solr");
             var response = solr.ping();
             Console.WriteLine(response.getQTime());
-        }
-
-        // from http://blogs.dovetailsoftware.com/blogs/kmiller/archive/2010/07/02/using-the-tika-java-library-in-your-net-application-with-ikvm
-        public class MySystemClassLoader : ClassLoader
-        {
-            public MySystemClassLoader(ClassLoader parent)
-                : base(new AppDomainAssemblyClassLoader(typeof(MySystemClassLoader).Assembly))
-            {
-            }
         }
         
         [Test]

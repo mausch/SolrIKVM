@@ -164,6 +164,7 @@
   <ItemGroup>
     <Compile Include="CustomPrintWriter.cs" />
     <Compile Include="EnumerationAdapter.cs" />
+    <Compile Include="Jetty.cs" />
     <Compile Include="MapEntry.cs" />
     <Compile Include="MapNameValueCollectionAdapter.cs" />
     <Compile Include="OutputStreamAdapter.cs" />
@@ -173,8 +174,8 @@
     <Compile Include="ServletRequestAdapter.cs" />
     <Compile Include="ServletResponseAdapter.cs" />
     <Compile Include="SolrHandler.cs" />
-    <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemClassLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

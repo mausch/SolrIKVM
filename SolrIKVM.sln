@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrIKVM", "SolrIKVM\SolrIK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrAspNet", "SolrAspNet\SolrAspNet.csproj", "{733C092D-BBD2-4042-B939-4DBBE0655DB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrIKVM.Tests", "SolrIKVM.Tests\SolrIKVM.Tests.csproj", "{55AF36FD-30B6-4844-BB17-1222CC59D3BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{733C092D-BBD2-4042-B939-4DBBE0655DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{733C092D-BBD2-4042-B939-4DBBE0655DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{733C092D-BBD2-4042-B939-4DBBE0655DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AF36FD-30B6-4844-BB17-1222CC59D3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AF36FD-30B6-4844-BB17-1222CC59D3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AF36FD-30B6-4844-BB17-1222CC59D3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AF36FD-30B6-4844-BB17-1222CC59D3BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
