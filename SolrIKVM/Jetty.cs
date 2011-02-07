@@ -1,8 +1,6 @@
 ﻿using System.Configuration;
 using System.IO;
-using org.apache.solr.servlet;
-using org.mortbay.jetty;
-using org.mortbay.jetty.servlet;
+using org.apache.solr.client.solrj.embedded;
 
 namespace SolrIKVM {
     public static class Jetty {
@@ -20,11 +18,8 @@ namespace SolrIKVM {
             var home = ConfigurationManager.AppSettings["solr.home"];
             java.lang.System.setProperty("solr.solr.home", home);
             java.lang.System.setProperty("solr.data.dir", Path.Combine(home, "data"));
-            var server = new Server(Port);
-            var servletContext = new Context(server, "/solr");
-            var servlet = new SolrServlet();
-            servletContext.addServlet(new ServletHolder(servlet), "/*");
-            server.start();
+            var jetty = new JettySolrRunner("/solr", Port);
+            jetty.start();
             return 0;
         }
     }
