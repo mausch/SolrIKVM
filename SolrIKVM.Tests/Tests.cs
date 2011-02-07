@@ -11,7 +11,7 @@ namespace SolrIKVM.Tests {
     public class Tests {
         [TestFixtureSetUp]
         public void FixtureSetup() {
-            Setup.SetHome(@"..\..\..\SolrIKVM");
+            Setup.SetHome(@"..\..\..\SolrAspNet");
         }
 
         [Test]

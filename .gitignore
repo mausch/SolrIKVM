@@ -3,6 +3,7 @@
 *.user
 *.suo
 SolrIKVM/data
+SolrAspNet/data
 _ReSharper.*
 lib/apache-*
 lib/lucene-*
