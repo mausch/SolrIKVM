@@ -61,6 +61,9 @@
     <Reference Include="IKVM.OpenJDK.Core">
       <HintPath>..\ikvm\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
+    <Reference Include="IKVM.OpenJDK.Management">
+      <HintPath>..\ikvm\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
     <Reference Include="IKVM.OpenJDK.Text, Version=0.44.0.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ikvm\IKVM.OpenJDK.Text.dll</HintPath>
