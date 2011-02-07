@@ -11,8 +11,8 @@ namespace SolrIKVM {
         public SolrHandler() {
             filter = new SolrDispatchFilter();
             var cfg = new SolrFilterConfig(new Dictionary<string,string> {
-                {"path-prefix", ""},
-                {"solrconfig-filename", ""},
+                {"path-prefix", null},
+                {"solrconfig-filename", null},
             });
             filter.init(cfg);
         }
