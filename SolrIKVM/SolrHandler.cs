@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Web;
-using javax.servlet;
 using javax.servlet.http;
 using org.apache.solr.servlet;
 

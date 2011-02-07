@@ -1,22 +1,15 @@
 ﻿using System;
-using System.IO;
-using ikvm.runtime;
-using java.lang;
-using java.util;
 using NUnit.Framework;
 using org.apache.solr.client.solrj;
 using org.apache.solr.client.solrj.beans;
 using org.apache.solr.client.solrj.embedded;
 using org.apache.solr.client.solrj.impl;
-using org.apache.solr.common.@params;
 using org.apache.solr.core;
-using org.apache.solr.schema;
 using org.apache.solr.servlet;
 using org.mortbay.jetty;
 using org.mortbay.jetty.servlet;
-using org.slf4j;
 
-namespace SolrIKVM {
+namespace SolrIKVM.Tests {
     [TestFixture]
     public class Tests {
         [TestFixtureSetUp]
@@ -31,7 +24,7 @@ namespace SolrIKVM {
             var response = solr.ping();
             Console.WriteLine(response.getQTime());
         }
-        
+
         [Test]
         public void Embedded() {
             var initializer = new CoreContainer.Initializer();

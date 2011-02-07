@@ -72,7 +72,7 @@ namespace SolrIKVM {
         }
 
         public int getServerPort() {
-            return 80; // ?
+            return context.Request.Url.Port;
         }
 
         public BufferedReader getReader() {
