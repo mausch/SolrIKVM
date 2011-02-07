@@ -1,0 +1,14 @@
+*/bin
+*/obj
+*.user
+*.suo
+SolrIKVM/data
+_ReSharper.*
+lib/apache-*
+lib/lucene-*
+lib/jetty-*
+lib/commons-*
+lib/geronimo-*
+lib/jcl-*
+lib/servlet-*
+lib/slf4j-*

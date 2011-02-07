@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2306C49-9F51-4176-BCC6-9D001F3BBFB6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SolrIKVM</RootNamespace>
+    <AssemblyName>SolrIKVM</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="apache-solr-core-1.4.1">
+      <HintPath>..\lib\apache-solr-core-1.4.1.dll</HintPath>
+    </Reference>
+    <Reference Include="apache-solr-solrj-1.4.1">
+      <HintPath>..\lib\apache-solr-solrj-1.4.1.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-codec-1.3">
+      <HintPath>..\lib\commons-codec-1.3.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-csv-1.0-SNAPSHOT-r609327">
+      <HintPath>..\lib\commons-csv-1.0-SNAPSHOT-r609327.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-fileupload-1.2.1">
+      <HintPath>..\lib\commons-fileupload-1.2.1.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-httpclient-3.1">
+      <HintPath>..\lib\commons-httpclient-3.1.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-io-1.4">
+      <HintPath>..\lib\commons-io-1.4.dll</HintPath>
+    </Reference>
+    <Reference Include="geronimo-stax-api_1.0_spec-1.0.1">
+      <HintPath>..\lib\geronimo-stax-api_1.0_spec-1.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ikvm\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management">
+      <HintPath>..\ikvm\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming">
+      <HintPath>..\ikvm\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security">
+      <HintPath>..\ikvm\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT">
+      <HintPath>..\ikvm\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text">
+      <HintPath>..\ikvm\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>..\ikvm\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API">
+      <HintPath>..\ikvm\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse">
+      <HintPath>..\ikvm\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath">
+      <HintPath>..\ikvm\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>..\ikvm\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="jetty-6.1.3">
+      <HintPath>..\lib\jetty-6.1.3.dll</HintPath>
+    </Reference>
+    <Reference Include="jetty-util-6.1.3">
+      <HintPath>..\lib\jetty-util-6.1.3.dll</HintPath>
+    </Reference>
+    <Reference Include="lucene-analyzers-2.9.3">
+      <HintPath>..\lib\lucene-analyzers-2.9.3.dll</HintPath>
+    </Reference>
+    <Reference Include="lucene-core-2.9.3">
+      <HintPath>..\lib\lucene-core-2.9.3.dll</HintPath>
+    </Reference>
+    <Reference Include="lucene-highlighter-2.9.3">
+      <HintPath>..\lib\lucene-highlighter-2.9.3.dll</HintPath>
+    </Reference>
+    <Reference Include="lucene-memory-2.9.3">
+      <HintPath>..\lib\lucene-memory-2.9.3.dll</HintPath>
+    </Reference>
+    <Reference Include="lucene-queries-2.9.3">
+      <HintPath>..\lib\lucene-queries-2.9.3.dll</HintPath>
+    </Reference>
+    <Reference Include="lucene-snowball-2.9.3">
+      <HintPath>..\lib\lucene-snowball-2.9.3.dll</HintPath>
+    </Reference>
+    <Reference Include="lucene-spellchecker-2.9.3">
+      <HintPath>..\lib\lucene-spellchecker-2.9.3.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="servlet-api-2.5-6.1.3">
+      <HintPath>..\lib\servlet-api-2.5-6.1.3.dll</HintPath>
+    </Reference>
+    <Reference Include="slf4j-jdk14-1.5.5">
+      <HintPath>..\lib\slf4j-jdk14-1.5.5.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomPrintWriter.cs" />
+    <Compile Include="EnumerationAdapter.cs" />
+    <Compile Include="MapEntry.cs" />
+    <Compile Include="MapNameValueCollectionAdapter.cs" />
+    <Compile Include="OutputStreamAdapter.cs" />
+    <Compile Include="RequestDispatcherAdapter.cs" />
+    <Compile Include="ServletInputStreamAdapter.cs" />
+    <Compile Include="ServletOutputStreamAdapter.cs" />
+    <Compile Include="ServletRequestAdapter.cs" />
+    <Compile Include="ServletResponseAdapter.cs" />
+    <Compile Include="SolrHandler.cs" />
+    <Compile Include="Tests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
