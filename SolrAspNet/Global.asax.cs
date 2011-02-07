@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Configuration;
+using System.IO;
 using System.Web;
 using SolrIKVM;
 
 namespace SolrAspNet {
     public class Global : HttpApplication {
         protected void Application_Start(object sender, EventArgs e) {
-            SolrHandler.SetHome(@"c:\prg\mausch\SolrIKVM\SolrIKVM");
+            var root = Server.MapPath("/");
+            var solrHome = Path.Combine(root, ConfigurationManager.AppSettings["solr.home"]);
+            SolrHandler.SetHome(solrHome);
         }
 
         protected void Session_Start(object sender, EventArgs e) {}
