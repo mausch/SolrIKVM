@@ -19,6 +19,12 @@ using org.slf4j;
 namespace SolrIKVM {
     [TestFixture]
     public class Tests {
+        [TestFixtureSetUp]
+        public void FixtureSetup() {
+            java.lang.System.setProperty("solr.solr.home", @"..\..\SolrIKVM");
+            java.lang.System.setProperty("solr.data.dir", @"..\..\SolrIKVM\data");
+        }
+
         [Test]
         public void Ping() {
             SolrServer solr = new CommonsHttpSolrServer("http://localhost:8983/solr");
@@ -28,8 +34,6 @@ namespace SolrIKVM {
         
         [Test]
         public void Embedded() {
-            java.lang.System.setProperty("solr.solr.home", @"..\..");
-            java.lang.System.setProperty("solr.data.dir", @"..\..\data");
             var initializer = new CoreContainer.Initializer();
             var coreContainer = initializer.initialize();
             var solr = new EmbeddedSolrServer(coreContainer, "");
@@ -44,8 +48,6 @@ namespace SolrIKVM {
 
         [Test]
         public void Jetty() {
-            java.lang.System.setProperty("solr.solr.home", @"..\..");
-            java.lang.System.setProperty("solr.data.dir", @"..\..\data");
             var server = new Server(8983);
             var servletContext = new Context(server, "/solr");
             var servlet = new SolrServlet();
