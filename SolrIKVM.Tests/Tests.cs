@@ -16,7 +16,7 @@ namespace SolrIKVM.Tests {
 
         [Test]
         public void Ping() {
-            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8983/solr");
+            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794/solr");
             var response = solr.ping();
             Console.WriteLine(response.getQTime());
         }
@@ -48,7 +48,8 @@ namespace SolrIKVM.Tests {
 
         public static int Main(string[] args) {
             var t = new Tests();
-            t.Embedded();
+            //t.Embedded();
+            t.Ping();
             return 0;
         }
     }

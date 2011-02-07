@@ -16,7 +16,7 @@ namespace SolrIKVM {
         }
 
         public object getAttribute(string str) {
-            throw new NotImplementedException();
+            return context.Items[str];
         }
 
         public Enumeration getAttributeNames() {
@@ -88,11 +88,11 @@ namespace SolrIKVM {
         }
 
         public void setAttribute(string str, object obj) {
-            throw new NotImplementedException();
+            context.Items[str] = obj;
         }
 
         public void removeAttribute(string str) {
-            throw new NotImplementedException();
+            context.Items.Remove(str);
         }
 
         public Locale getLocale() {
@@ -164,11 +164,11 @@ namespace SolrIKVM {
         }
 
         public string getPathInfo() {
-            throw new NotImplementedException();
+            return null;
         }
 
         public string getPathTranslated() {
-            throw new NotImplementedException();
+            return null;
         }
 
         public string getContextPath() {
@@ -205,7 +205,7 @@ namespace SolrIKVM {
         }
 
         public string getServletPath() {
-            throw new NotImplementedException();
+            return context.Request.Url.AbsolutePath;
         }
 
         public HttpSession getSession(bool b) {

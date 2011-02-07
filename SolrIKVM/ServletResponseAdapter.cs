@@ -100,11 +100,14 @@ namespace SolrIKVM {
         }
 
         public void sendError(int i, string str) {
-            throw new NotImplementedException();
+            context.Response.Write("<pre>");
+            context.Response.Write(str);
+            context.Response.Write("</pre>");
+            context.Response.StatusCode = i;
         }
 
         public void sendError(int i) {
-            throw new NotImplementedException();
+            context.Response.StatusCode = i;
         }
 
         public void sendRedirect(string str) {
@@ -140,7 +143,7 @@ namespace SolrIKVM {
         }
 
         public void setStatus(int i, string str) {
-            throw new NotImplementedException();
+            context.Response.Status = string.Format("{0} {1}", i, str);
         }
     }
 }

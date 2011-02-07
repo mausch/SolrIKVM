@@ -1,16 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web;
-using javax.servlet.http;
+using javax.servlet;
 using org.apache.solr.servlet;
 
 namespace SolrIKVM {
     public class SolrHandler : IHttpHandler, IDisposable {
-
-        private readonly HttpServlet servlet;
+        private readonly Filter filter;
 
         public SolrHandler() {
-            servlet = new SolrServlet();
-            servlet.init();
+            filter = new SolrDispatchFilter();
+            var cfg = new SolrFilterConfig(new Dictionary<string,string> {
+                {"path-prefix", ""},
+                {"solrconfig-filename", ""},
+            });
+            filter.init(cfg);
         }
 
         public void ProcessRequest(HttpContext context) {
@@ -20,7 +24,7 @@ namespace SolrIKVM {
         public void ProcessRequest(HttpContextBase context) {
             var request = new ServletRequestAdapter(context);
             var response = new ServletResponseAdapter(context);
-            servlet.service(request, response);
+            filter.doFilter(request, response, null);
         }
 
         public bool IsReusable {
@@ -28,7 +32,7 @@ namespace SolrIKVM {
         }
 
         public void Dispose() {
-            servlet.destroy();
+            filter.destroy();
         }
     }
 }

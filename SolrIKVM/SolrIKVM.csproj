@@ -175,6 +175,7 @@
     <Compile Include="ServletRequestAdapter.cs" />
     <Compile Include="ServletResponseAdapter.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="SolrFilterConfig.cs" />
     <Compile Include="SolrHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemClassLoader.cs" />
