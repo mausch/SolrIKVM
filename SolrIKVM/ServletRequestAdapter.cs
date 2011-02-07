@@ -151,7 +151,7 @@ namespace SolrIKVM {
         }
 
         public string getHeader(string str) {
-            throw new NotImplementedException();
+            return context.Request.Headers[str];
         }
 
         public Enumeration getHeaders(string str) {

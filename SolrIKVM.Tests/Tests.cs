@@ -16,9 +16,19 @@ namespace SolrIKVM.Tests {
 
         [Test]
         public void Ping() {
-            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794/solr");
+            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794");
             var response = solr.ping();
             Console.WriteLine(response.getQTime());
+        }
+
+        [Test]
+        public void Add() {
+            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794");
+            solr.addBean(new Document {
+                Id = "3",
+                SKU = "abcde",
+            });
+            solr.commit();
         }
 
         [Test]
@@ -49,7 +59,8 @@ namespace SolrIKVM.Tests {
         public static int Main(string[] args) {
             var t = new Tests();
             //t.Embedded();
-            t.Ping();
+            //t.Ping();
+            t.Add();
             return 0;
         }
     }
