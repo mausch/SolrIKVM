@@ -1,15 +1,18 @@
-﻿using System.Configuration;
-using System.IO;
+﻿using System;
+using System.Configuration;
 using org.apache.solr.client.solrj.embedded;
 
 namespace SolrIKVM {
     public static class Jetty {
         public static int Port {
             get {
-                try {
-                    return int.Parse(ConfigurationManager.AppSettings["port"]);
-                } catch {
+                var p = ConfigurationManager.AppSettings["port"];
+                if (string.IsNullOrEmpty(p))
                     return 8983;
+                try {
+                    return int.Parse(p);
+                } catch (Exception e) {
+                    throw new Exception(string.Format("Invalid port '{0}'", p), e);
                 }
             }
         }
