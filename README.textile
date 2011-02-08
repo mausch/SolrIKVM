@@ -1,0 +1,9 @@
+Running "Apache Solr":http://lucene.apache.org/solr/ on .NET through "IKVM":http://www.ikvm.net/
+
+Run build.bat to convert Solr JARs to .NET DLLs and compile the project.
+
+SolrIKVM has three modes of operations:
+
+* Embedded, as in "Embedded Solr":http://wiki.apache.org/solr/EmbeddedSolr (see "test":https://github.com/mausch/SolrIKVM/blob/977318b6d13dd4a2a7eb108314210ce5c2c97c2b/SolrIKVM.Tests/Tests.cs#L35 )
+* Server, using the embedded Jetty (execute SolrIKVM.exe, optionally "configure the port and Solr home directory":https://github.com/mausch/SolrIKVM/blob/master/SolrIKVM/App.config )
+* Server, using ASP.NET infrastructure, as a standard IHttpHandler (see "SolrAspNet project":https://github.com/mausch/SolrIKVM/tree/master/SolrAspNet )
