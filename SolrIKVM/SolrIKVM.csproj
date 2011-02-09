@@ -165,7 +165,7 @@
   <ItemGroup>
     <Compile Include="CustomPrintWriter.cs" />
     <Compile Include="EnumerationAdapter.cs" />
-    <Compile Include="Jetty.cs" />
+    <Compile Include="EntryPoint.cs" />
     <Compile Include="MapEntry.cs" />
     <Compile Include="MapNameValueCollectionAdapter.cs" />
     <Compile Include="OutputStreamAdapter.cs" />

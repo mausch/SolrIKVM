@@ -3,7 +3,7 @@ using System.Configuration;
 using org.apache.solr.client.solrj.embedded;
 
 namespace SolrIKVM {
-    public static class Jetty {
+    public static class EntryPoint {
         public static int Main(string[] args) {
             var home = ConfigurationManager.AppSettings["solr.home"];
             Setup.SetHome(home);
