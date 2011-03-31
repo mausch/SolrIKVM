@@ -13,3 +13,5 @@ lib/geronimo-*
 lib/jcl-*
 lib/servlet-*
 lib/slf4j-*
+lib/jakarta-*
+lib/velocity-*
