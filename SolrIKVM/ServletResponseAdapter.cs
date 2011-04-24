@@ -24,7 +24,7 @@ namespace SolrIKVM {
         }
 
         public ServletOutputStream getOutputStream() {
-            return new ServletOutputStreamAdapter(context.Response.OutputStream);
+            return new  ServletOutputStreamAdapter(new JavaOutputStream(context.Response.OutputStream), context.Response.ContentEncoding);
         }
 
         public PrintWriter getWriter() {

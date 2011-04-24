@@ -39,8 +39,9 @@ namespace SolrIKVM {
             return context.Request.ContentType;
         }
 
-        public ServletInputStream getInputStream() {
-            return new ServletInputStreamAdapter(context.Request.InputStream);
+        public ServletInputStream getInputStream()
+        {
+            return new ServletInputStreamAdapter(new JavaInputStream(context.Request.InputStream));
         }
 
         public string getParameter(string str) {
@@ -212,8 +213,19 @@ namespace SolrIKVM {
             throw new NotImplementedException();
         }
 
-        public string getServletPath() {
-            return context.Request.Url.AbsolutePath;
+        public string getServletPath()
+        {
+            string path = context.Request.Url.AbsolutePath;
+
+            while(path.EndsWith("/"))
+            {
+                path = path.Remove(path.Length-1);
+            }
+
+            int index = path.LastIndexOf("/");
+
+            string servletPath = path.Substring(index);
+            return servletPath;
         }
 
         public HttpSession getSession(bool b) {

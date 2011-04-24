@@ -54,43 +54,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="apache-solr-core-3.1.0">
-      <HintPath>..\lib\apache-solr-core-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="apache-solr-noggit-r944541, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\apache-solr-noggit-r944541.dll</HintPath>
-    </Reference>
-    <Reference Include="apache-solr-solrj-3.1.0">
-      <HintPath>..\lib\apache-solr-solrj-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="commons-codec-1.4">
-      <HintPath>..\lib\commons-codec-1.4.dll</HintPath>
-    </Reference>
-    <Reference Include="commons-collections-3.2.1, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\commons-collections-3.2.1.dll</HintPath>
-    </Reference>
-    <Reference Include="commons-csv-1.0-SNAPSHOT-r966014, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\commons-csv-1.0-SNAPSHOT-r966014.dll</HintPath>
-    </Reference>
-    <Reference Include="commons-fileupload-1.2.1">
-      <HintPath>..\lib\commons-fileupload-1.2.1.dll</HintPath>
-    </Reference>
-    <Reference Include="commons-httpclient-3.1">
-      <HintPath>..\lib\commons-httpclient-3.1.dll</HintPath>
-    </Reference>
-    <Reference Include="commons-io-1.4">
-      <HintPath>..\lib\commons-io-1.4.dll</HintPath>
-    </Reference>
-    <Reference Include="commons-lang-2.4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\commons-lang-2.4.dll</HintPath>
-    </Reference>
-    <Reference Include="geronimo-stax-api_1.0_spec-1.0.1">
-      <HintPath>..\lib\geronimo-stax-api_1.0_spec-1.0.1.dll</HintPath>
-    </Reference>
     <Reference Include="IKVM.OpenJDK.Core, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ikvm\IKVM.OpenJDK.Core.dll</HintPath>
@@ -125,47 +88,12 @@
     <Reference Include="IKVM.Runtime">
       <HintPath>..\ikvm\IKVM.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="jakarta-regexp-1.5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\jakarta-regexp-1.5.dll</HintPath>
-    </Reference>
-    <Reference Include="jetty-6.1.3">
-      <HintPath>..\lib\jetty-6.1.3.dll</HintPath>
-    </Reference>
-    <Reference Include="jetty-util-6.1.3">
-      <HintPath>..\lib\jetty-util-6.1.3.dll</HintPath>
-    </Reference>
-    <Reference Include="lucene-analyzers-3.1.0">
-      <HintPath>..\lib\lucene-analyzers-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="lucene-core-3.1.0">
-      <HintPath>..\lib\lucene-core-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="lucene-highlighter-3.1.0">
-      <HintPath>..\lib\lucene-highlighter-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="lucene-memory-3.1.0">
-      <HintPath>..\lib\lucene-memory-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="lucene-queries-3.1.0">
-      <HintPath>..\lib\lucene-queries-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="lucene-spatial-3.1.0, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\lucene-spatial-3.1.0.dll</HintPath>
-    </Reference>
-    <Reference Include="lucene-spellchecker-3.1.0">
-      <HintPath>..\lib\lucene-spellchecker-3.1.0.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="servlet-api-2.5-6.1.3">
-      <HintPath>..\lib\servlet-api-2.5-6.1.3.dll</HintPath>
-    </Reference>
-    <Reference Include="slf4j-jdk14-1.5.5">
-      <HintPath>..\lib\slf4j-jdk14-1.5.5.dll</HintPath>
+    <Reference Include="solr">
+      <HintPath>..\lib\solr.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -181,19 +109,13 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="velocity-1.6.1, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\velocity-1.6.1.dll</HintPath>
-    </Reference>
-    <Reference Include="velocity-tools-2.0-beta3, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\velocity-tools-2.0-beta3.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomPrintWriter.cs" />
     <Compile Include="EnumerationAdapter.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="JavaInputStream.cs" />
+    <Compile Include="JavaOutputStream.cs" />
     <Compile Include="MapEntry.cs" />
     <Compile Include="MapNameValueCollectionAdapter.cs" />
     <Compile Include="OutputStreamAdapter.cs" />

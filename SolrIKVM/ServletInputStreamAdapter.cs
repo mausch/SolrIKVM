@@ -1,51 +1,48 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using java.io;
 using javax.servlet;
 
 namespace SolrIKVM {
     public class ServletInputStreamAdapter : ServletInputStream {
-        private readonly Stream stream;
+        readonly InputStream _in;
 
-        public ServletInputStreamAdapter(Stream stream) {
-            this.stream = stream;
-        }
-
-        public override int read(byte[] b) {
-            return stream.Read(b, 0, b.Length);
-        }
-
-        public override int read(byte[] b, int off, int len) {
-            var r = stream.Read(b, off, len);
-            return r;
+        public ServletInputStreamAdapter(InputStream @in) {
+            _in = @in;
         }
 
         public override int read() {
-            return stream.ReadByte();
+            return _in.read();
         }
 
-        public override void close() {
-            stream.Close();
+        public int read(byte[] b) {
+            return _in.read(b);
         }
 
-        public override long skip(long n) {
-            return stream.Seek(n, SeekOrigin.Current);
+        public int read(byte[] b, int off, int len) {
+            return _in.read(b, off, len);
         }
 
-        private IEnumerable<byte> GetBytes() {
-            while (true) {
-                var b = stream.ReadByte();
-                if (b == -1)
-                    break;
-                yield return (byte)b;
-            }
+        public long skip(long len) {
+            return _in.skip(len);
         }
 
-        public override int readLine(byte[] buffer, int off, int len) {
-            stream.Seek(off, SeekOrigin.Begin);
-            var bytes = GetBytes().TakeWhile((c,i) => c != '\n' && i <= len).ToArray();
-            bytes.CopyTo(buffer, 0);
-            return bytes.Length;
+        public int available() {
+            return _in.available();
+        }
+
+        public void close() {
+            _in.close();
+        }
+
+        public bool markSupported() {
+            return _in.markSupported();
+        }
+
+        public void reset() {
+            _in.reset();
+        }
+
+        public void mark(int readlimit) {
+            _in.mark(readlimit);
         }
     }
 }
