@@ -3,6 +3,7 @@ using System.Configuration;
 using System.IO;
 using System.Web;
 using SolrIKVM;
+using SolrNet;
 
 namespace SolrAspNet {
     public class Global : HttpApplication {
@@ -10,6 +11,8 @@ namespace SolrAspNet {
             var root = Server.MapPath("/");
             var solrHome = Path.Combine(root, ConfigurationManager.AppSettings["solr.home"]);
             Setup.SetHome(solrHome);
+            //Startup.Init<SearchResultItem>("http://localhost:8983/solr");
+            Startup.Init<SearchResultItem>("http://localhost:8794/solr.axd");
         }
 
         protected void Session_Start(object sender, EventArgs e) {}

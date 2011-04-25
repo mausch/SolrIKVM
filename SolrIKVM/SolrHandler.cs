@@ -22,9 +22,16 @@ namespace SolrIKVM {
         }
 
         public void ProcessRequest(HttpContextBase context) {
-            var request = new ServletRequestAdapter(context);
-            var response = new ServletResponseAdapter(context);
-            filter.doFilter(request, response, null);
+            try
+            {
+                var request = new ServletRequestAdapter(context);
+                var response = new ServletResponseAdapter(context);
+                filter.doFilter(request, response, null);
+            }
+            catch
+            {
+                context.Response.StatusCode = 500;
+            }
         }
 
         public bool IsReusable {

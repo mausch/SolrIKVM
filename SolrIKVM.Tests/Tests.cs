@@ -23,7 +23,7 @@ namespace SolrIKVM.Tests {
 
         [Test]
         public void Add() {
-            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794");
+            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794/solr/api.axd");
             solr.addBean(new Document {
                 Id = "3",
                 SKU = "abcde",
