@@ -9,6 +9,8 @@ using org.apache.solr.core;
 namespace SolrIKVM.Tests {
     [TestFixture]
     public class Tests {
+        const string solrUrl = "http://localhost:8794/solr.axd";
+
         [TestFixtureSetUp]
         public void FixtureSetup() {
             Setup.SetHome(@"..\..\..\SolrAspNet");
@@ -16,14 +18,14 @@ namespace SolrIKVM.Tests {
 
         [Test]
         public void Ping() {
-            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794");
+            SolrServer solr = new CommonsHttpSolrServer(solrUrl);
             var response = solr.ping();
             Console.WriteLine(response.getQTime());
         }
 
         [Test]
         public void Add() {
-            SolrServer solr = new CommonsHttpSolrServer("http://localhost:8794/solr/api.axd");
+            SolrServer solr = new CommonsHttpSolrServer(solrUrl);
             solr.addBean(new Document {
                 Id = "3",
                 SKU = "abcde",
