@@ -7,13 +7,10 @@ using org.apache.solr.client.solrj.beans;
 using org.apache.solr.client.solrj.embedded;
 using org.apache.solr.client.solrj.impl;
 using org.apache.solr.core;
-using SolrNet;
-using SolrNet.Attributes;
-using SolrQuery = org.apache.solr.client.solrj.SolrQuery;
 
 namespace SolrIKVM.Tests {
     [TestFixture]
-    public class Tests {
+    public class SolrJTests {
         const string solrUrl = "http://localhost:8794/solr.axd";
 
         [TestFixtureSetUp]
@@ -38,30 +35,6 @@ namespace SolrIKVM.Tests {
             solr.commit();
         }
 
-        [Test]
-        public void AddWithSolrNet()
-        {
-            Startup.Init<Product>("http://localhost:8794/solr.axd");
-
-            var p = new Product
-            {
-                Id = "100",
-                Manufacturer = "Some hard drive",
-                Categories = new[]
-                                                 {
-                                                     "electronics",
-                                                     "hard drive",
-                                                 },
-                Price = 92,
-                InStock = true,
-            };
-
-
-            var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Product>>();
-            solr.Add(p);
-            solr.Commit();
-
-        }
 
         [Test]
         public void Embedded() {
@@ -80,24 +53,6 @@ namespace SolrIKVM.Tests {
             Console.WriteLine("results: {0}", response.getResults().size());
         }
 
-        public class Product
-        {
-            [SolrUniqueKey("id")]
-            public string Id { get; set; }
-
-            [SolrField("manu_exact")]
-            public string Manufacturer { get; set; }
-
-            [SolrField("cat")]
-            public ICollection<string> Categories { get; set; }
-
-            [SolrField("price")]
-            public decimal Price { get; set; }
-
-            [SolrField("inStock")]
-            public bool InStock { get; set; }
-
-        }
         public class Document {
             [Field("Id")] 
             public string Id;
@@ -107,7 +62,7 @@ namespace SolrIKVM.Tests {
         }
 
         public static int Main(string[] args) {
-            var t = new Tests();
+            var t = new SolrJTests();
             //t.Embedded();
             //t.Ping();
             t.Add();
