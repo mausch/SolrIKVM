@@ -54,7 +54,7 @@ namespace SolrIKVM.Tests {
         }
 
         public class Document {
-            [Field("Id")] 
+            [Field("id")] 
             public string Id;
 
             [Field("sku")]
