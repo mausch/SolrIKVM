@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{55AF36FD-30B6-4844-BB17-1222CC59D3BA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SolrIKVM.Tests</RootNamespace>
     <AssemblyName>SolrIKVM.Tests</AssemblyName>

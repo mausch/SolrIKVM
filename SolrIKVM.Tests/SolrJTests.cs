@@ -60,13 +60,5 @@ namespace SolrIKVM.Tests {
             [Field("sku")]
             public string SKU;
         }
-
-        public static int Main(string[] args) {
-            var t = new SolrJTests();
-            //t.Embedded();
-            //t.Ping();
-            t.Add();
-            return 0;
-        }
     }
 }
